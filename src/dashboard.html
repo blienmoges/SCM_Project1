@@ -8,47 +8,57 @@
 </head>
 <body>
   <div class="container">
-    <div class="card topbar">
-      <div>
-        <h1>Dashboard</h1>
-        <p class="small">Welcome, <span id="studentName">Student</span> <span class="badge" id="studentIdBadge">ID</span></p>
+    <div class="card header">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome, <strong id="studentName">Student</strong></p>
+        </div>
       </div>
-      <button class="btn-secondary" id="logoutBtn">Logout</button>
+
+      <div class="actions" style="margin-top:0;">
+        <span class="badge" id="studentIdBadge">ID</span>
+        <button class="btn btn-ghost" id="logoutBtn">Logout</button>
+      </div>
     </div>
 
-    <div class="row">
+    <div class="grid">
       <div class="card">
+        <h2>Course Registration</h2>
+        <p>Select a course and register. You can drop courses anytime.</p>
+
+        <label class="label">Available Courses</label>
+        <select id="courseSelect"></select>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="registerBtn">Register Course</button>
+          <span class="helper">Core action</span>
+        </div>
+
+        <div id="regMsg" class="msg"></div>
+
+        <hr class="hr"/>
+
+        <h2>My Registered Courses</h2>
+        <div id="myCourses"></div>
+      </div>
+
+      <div class="card">
+        <h2>Student Profile</h2>
+        <p id="profileInfo">Loading profile…</p>
+
+        <hr class="hr"/>
+
         <h2>Portal Modules</h2>
-        <ul>
+        <ul class="list">
           <li>Courses</li>
-          <li>Profile (CR-03)</li>
+          <li>Profile</li>
           <li>Grades</li>
           <li>Requests</li>
           <li>Notices</li>
         </ul>
       </div>
-
-      <div class="card">
-        <h2>Profile (CR-03)</h2>
-        <p class="small" id="profileInfo">Loading profile...</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Course Registration (Core Action)</h2>
-      <p class="small">Select a course and click Register.</p>
-
-      <label>Available Courses</label>
-      <select id="courseSelect"></select>
-
-      <button class="btn" id="registerBtn">Register</button>
-      <p id="regMsg"></p>
-
-      <hr/>
-
-      <h3>My Registered Courses</h3>
-      <ul id="myCourses"></ul>
-      <p class="small">Use “Drop” to remove a course (CR-02).</p>
     </div>
   </div>
 
