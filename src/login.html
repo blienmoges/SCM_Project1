@@ -7,24 +7,34 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
+  <div class="center">
     <div class="card">
-      <h1>Student Portal</h1>
-      <p class="small">Login to access your dashboard.</p>
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Student Portal</h1>
+          <p>Sign in to access your dashboard.</p>
+        </div>
+      </div>
 
-      <label>Username</label>
-      <input id="username" type="text" placeholder="e.g., s123" />
+      <label class="label">Username</label>
+      <input class="input" id="username" type="text" placeholder="e.g., s123"/>
 
-      <label>Password</label>
-      <input id="password" type="password" placeholder="••••••••" />
+      <label class="label">Password</label>
+      <input class="input" id="password" type="password" placeholder="e.g., 1234"/>
 
-      <label class="small">
-        <input id="rememberMe" type="checkbox" />
-        Remember me (CR-01)
-      </label>
+      <div class="actions">
+        <label class="helper">
+          <input id="rememberMe" type="checkbox" />
+          Remember me
+        </label>
+        <button class="btn btn-primary" id="loginBtn">Login</button>
+      </div>
 
-      <button class="btn" id="loginBtn">Login</button>
-      <p id="msg" class="error"></p>
+      <div id="msg" class="msg"></div>
+
+      <hr class="hr"/>
+      <p class="helper">Tip: Open using Live Server / localhost so JSON loads correctly.</p>
     </div>
   </div>
 

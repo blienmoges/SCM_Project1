@@ -1,51 +1,39 @@
-// Simple JSON-based login (prototype)
 async function loadStudents() {
   const res = await fetch("./data/students.json");
+  if (!res.ok) throw new Error("students.json not found");
   return res.json();
 }
 
 function setRememberedUser(username) {
   localStorage.setItem("sp_remembered_user", username);
 }
-
 function getRememberedUser() {
   return localStorage.getItem("sp_remembered_user");
 }
-
 function setSession(username) {
   sessionStorage.setItem("sp_current_user", username);
 }
 
-function getSession() {
-  return sessionStorage.getItem("sp_current_user");
-}
-
-function clearSession() {
-  sessionStorage.removeItem("sp_current_user");
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+  const msg = document.getElementById("msg");
+
+  // CR-01: Remember Me behavior (auto-fill username)
   const remembered = getRememberedUser();
   if (remembered) {
-    // If user was remembered, auto-fill username (simple implementation)
     document.getElementById("username").value = remembered;
     document.getElementById("rememberMe").checked = true;
   }
 
-  // If already logged in for this session, go to dashboard
-  if (getSession()) {
-    window.location.href = "dashboard.html";
-  }
-
   document.getElementById("loginBtn").addEventListener("click", async () => {
-    const msg = document.getElementById("msg");
     msg.textContent = "";
+    msg.className = "msg";
 
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
     const rememberMe = document.getElementById("rememberMe").checked;
 
     if (!username || !password) {
+      msg.className = "msg error";
       msg.textContent = "Please enter username and password.";
       return;
     }
@@ -55,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const user = students.find(s => s.username === username && s.password === password);
 
       if (!user) {
+        msg.className = "msg error";
         msg.textContent = "Invalid credentials. Try again.";
-        clearSession();
         return;
       }
 
@@ -67,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       window.location.href = "dashboard.html";
     } catch (e) {
-      msg.textContent = "Failed to load student data. Check file paths.";
+      msg.className = "msg error";
+      msg.textContent = "Cannot load students.json. Run with Live Server / localhost and check /src/data path.";
     }
   });
 });
