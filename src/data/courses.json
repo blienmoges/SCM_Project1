@@ -1,0 +1,6 @@
+[
+  { "id": "c1", "code": "SE301", "title": "Software Configuration Management" },
+  { "id": "c2", "code": "SE302", "title": "Software Testing" },
+  { "id": "c3", "code": "SE303", "title": "Web Development" },
+  { "id": "c4", "code": "SE304", "title": "Database Systems" }
+]

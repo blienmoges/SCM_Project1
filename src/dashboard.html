@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal - Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="small">Welcome, <span id="studentName">Student</span> <span class="badge" id="studentIdBadge">ID</span></p>
+      </div>
+      <button class="btn-secondary" id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <h2>Portal Modules</h2>
+        <ul>
+          <li>Courses</li>
+          <li>Profile (CR-03)</li>
+          <li>Grades</li>
+          <li>Requests</li>
+          <li>Notices</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Profile (CR-03)</h2>
+        <p class="small" id="profileInfo">Loading profile...</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Course Registration (Core Action)</h2>
+      <p class="small">Select a course and click Register.</p>
+
+      <label>Available Courses</label>
+      <select id="courseSelect"></select>
+
+      <button class="btn" id="registerBtn">Register</button>
+      <p id="regMsg"></p>
+
+      <hr/>
+
+      <h3>My Registered Courses</h3>
+      <ul id="myCourses"></ul>
+      <p class="small">Use “Drop” to remove a course (CR-02).</p>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
