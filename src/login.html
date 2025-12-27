@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal - Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Student Portal</h1>
+      <p class="small">Login to access your dashboard.</p>
+
+      <label>Username</label>
+      <input id="username" type="text" placeholder="e.g., s123" />
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="••••••••" />
+
+      <label class="small">
+        <input id="rememberMe" type="checkbox" />
+        Remember me (CR-01)
+      </label>
+
+      <button class="btn" id="loginBtn">Login</button>
+      <p id="msg" class="error"></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

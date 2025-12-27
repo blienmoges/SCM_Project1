@@ -1,0 +1,18 @@
+[
+  {
+    "username": "s123",
+    "password": "1234",
+    "studentId": "UGR/001",
+    "name": "Abel Tesfaye",
+    "program": "Software Engineering",
+    "year": "3"
+  },
+  {
+    "username": "s124",
+    "password": "1234",
+    "studentId": "UGR/002",
+    "name": "Sara Bekele",
+    "program": "Software Engineering",
+    "year": "2"
+  }
+]
